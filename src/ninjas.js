@@ -3,10 +3,8 @@ import React from 'react';
 const Ninjas = ({ ninjas }) => {
     
         
-        
-        console.log(ninjas)
-        const ninjaList = ninjas.map((ninja) => {
-            return ninja.age > 2 ? (
+            const ninjaList = ninjas.map((ninja) => {
+            return ninja.age > 0 ? (
                 <div className="ninja" key={ninja.key}>
                     <div>Name: {ninja.name}</div>
                     <div>Age: {ninja.age}</div>

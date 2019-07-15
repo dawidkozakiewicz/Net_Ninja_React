@@ -16,6 +16,17 @@ class App extends Component {
     ]
   }
 
+  deleteNinja = (key) => {
+    let ninjas = this.state.ninjas.filter((ninja) => {
+      return ninja.key !== key
+    })
+
+    this.setState({
+      ninjas: ninjas
+    })
+
+  }
+
   addNinja = (ninja) => {
     ninja.key = Math.random()
     let ninjas = [...this.state.ninjas, ninja]
@@ -30,8 +41,8 @@ class App extends Component {
       <div>
         <h1>My first React App</h1>
         <p>Welcome :-)</p>
-        <Ninjas ninjas={this.state.ninjas} />
-        <AddNinja addNinja={this.addNinja}/>
+        <Ninjas ninjas={this.state.ninjas} deleteNinja={this.deleteNinja} />
+        <AddNinja addNinja={this.addNinja} />
 
       </div>
     );
